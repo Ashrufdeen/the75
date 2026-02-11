@@ -1,0 +1,12 @@
+from collections import defaultdict
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        numtocount=defaultdict(int)
+        for num in arr:
+            numtocount[num]  +=1
+        set_counter=set()    
+        for i in numtocount.values():
+            if i in set_counter:
+                return False
+            set_counter.add(i)   
+        return True     
