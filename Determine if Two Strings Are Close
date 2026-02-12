@@ -1,0 +1,8 @@
+class Solution:
+    def closeStrings(self, word1: str, word2: str) -> bool:
+        freq1=Counter(word1)
+        freq2=Counter(word2)
+        s1=sorted(freq1.values())
+        s2=sorted(freq2.values())
+        keymatch= set(freq1.keys()) == set(freq2.keys())
+        return s1 == s2 and keymatch
