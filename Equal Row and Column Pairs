@@ -1,0 +1,7 @@
+class Solution:
+    def equalPairs(self, grid: List[List[int]]) -> int:
+        c=0
+        mydict=Counter([tuple(grid[row])for row in range(len(grid))])
+        for col in zip(*grid):
+            c+=mydict.get(col,0)
+        return c
