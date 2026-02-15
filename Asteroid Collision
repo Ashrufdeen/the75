@@ -1,0 +1,14 @@
+class Solution:
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        asteroidstack=[]
+        for asteroid in asteroids:
+            while asteroidstack and asteroid < 0 and asteroidstack[-1] > 0:
+                last=asteroidstack.pop()
+                if last > -asteroid:
+                    asteroidstack.append(last)
+                    break
+                if last == -asteroid:
+                    break   
+            else:
+                asteroidstack.append(asteroid) 
+        return asteroidstack        
